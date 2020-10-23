@@ -1,0 +1,12 @@
+{
+  "urls": [
+    {
+      "originalUrl": "https://www.google.com/",
+      "shortenUrl": "http://localhost/abcde"
+    },
+    {
+      "originalUrl": "https://www.facebook.com/home.php",
+      "shortenUrl": "http://localhost/ABCDE"
+    }
+  ]
+}
