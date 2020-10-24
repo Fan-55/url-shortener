@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 const home = require('./modules/home')
-const url = require('./modules/url')
+const urls = require('./modules/urls')
 
 router.use('/', home)
-router.use('/urls', url)
+router.use('/urls', urls)
 
 module.exports = router

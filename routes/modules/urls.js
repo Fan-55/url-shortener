@@ -5,7 +5,7 @@ const Url = require('../../models/url')
 router.post('/', async (req, res, next) => {
   const baseUrl = process.env.BASE_URL || 'https://secret-oasis-08507.herokuapp.com/'
   try {
-    const url = await Url.findOne(req.body)
+    const url = await Url.findOne(req.body).lean()
 
     if (url) {
       const pathname = url.pathname
@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
 
       do {
         pathname = getPathname()
-        duplicateUrl = await Url.findOne({ pathname })
+        duplicateUrl = await Url.findOne({ pathname }).lean()
       } while (duplicateUrl)
 
       Url.create({
