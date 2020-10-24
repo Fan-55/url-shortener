@@ -1,12 +1,18 @@
-//prevent empty or space-only input
+//prevent invalid url input
 const urlInputField = document.querySelector('#original-url-input')
 const submitBtn = document.querySelector('#submit-url')
 
+function isValidUrl(url) {
+  const expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+  const regex = new RegExp(expression)
+  return regex.test(url)
+}
+
 submitBtn.addEventListener('click', (e) => {
-  const urlInputValue = urlInputField.value.trim()
-  if (urlInputValue.length === 0) {
+  const urlInputValue = urlInputField.value
+  if (!isValidUrl(urlInputValue)) {
     e.preventDefault()
     urlInputField.value = null
-    return alert('Url cannot be empty or only spaces')
+    return alert('Invalid url input')
   }
 })

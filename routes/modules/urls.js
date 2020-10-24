@@ -4,16 +4,18 @@ const Url = require('../../models/url')
 
 router.post('/', async (req, res, next) => {
   const baseUrl = process.env.BASE_URL || 'https://secret-oasis-08507.herokuapp.com/'
-  const originalUrl = req.body.originalUrl.trim()
-  //Error is thrown if url input (originalUrl) is empty or only contains spaces
-  if (originalUrl) {
+  const isValidUrl = require('../../utils/isValidUrl')
+  const originalUrl = req.body.originalUrl
+
+  //prevent invalid url input
+  if (isValidUrl(originalUrl)) {
     try {
       const url = await Url.findOne(req.body).lean()
 
       if (url) {
         const pathname = url.pathname
         const shortenUrl = baseUrl + pathname
-        res.render('index', { shortenUrl })
+        res.render('index', { originalUrl, shortenUrl })
       } else {
         const getPathname = require('../../utils/getPathname')
         let pathname
@@ -26,14 +28,14 @@ router.post('/', async (req, res, next) => {
 
         Url.create({ originalUrl, pathname })
         const shortenUrl = baseUrl + pathname
-        res.render('index', { shortenUrl })
+        res.render('index', { originalUrl, shortenUrl })
       }
 
     } catch (err) {
       console.log(err)
     }
   } else {
-    const err = new Error('Invalid input')
+    const err = new Error('Invalid url input')
     next(err)
   }
 })
