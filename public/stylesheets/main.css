@@ -1,0 +1,39 @@
+html, body{
+  font-family: 'MicroSoft Jhenghei', sans-serif;
+}
+
+h3, .navbar-brand {
+  font-family: 'Alfa Slab One', cursive, 'MicroSoft Jhenghei', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar-brand:hover{
+  color: rgb(103, 103, 103) !important;
+}
+
+.nav-link:hover{
+  color: rgb(103, 103, 103) !important;
+}
+
+.link-img{
+  width: 200px;
+  height: 200px;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.attribute {
+  text-align: center;
+  font-size: 80%;
+}
+
+@media screen and (min-width: 576px){
+.container {
+  max-width: 800px;
+}}
