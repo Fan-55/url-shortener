@@ -4,7 +4,7 @@ This is a web application that can shorten the url and redirect user to the orig
 
 [Try It!](https://secret-oasis-08507.herokuapp.com/)
 
-![](/url-shortener.jpg)
+![](/url-shortener.png)
 
 ### How to use
 ---
