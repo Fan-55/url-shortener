@@ -16,3 +16,13 @@ submitBtn.addEventListener('click', (e) => {
     return alert('Invalid url input')
   }
 })
+
+//clipboard
+const shortenUrlField = document.querySelector('#shorten-url-output')
+const copyBtn = document.querySelector('#copy-btn')
+copyBtn.addEventListener('click', (e) => {
+  shortenUrlField.select()
+  document.execCommand('copy')
+  copyBtn.innerText = 'copied'
+  copyBtn.className = 'btn btn-danger'
+})
