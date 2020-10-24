@@ -2,11 +2,11 @@
   "urls": [
     {
       "originalUrl": "https://www.google.com/",
-      "shortenUrl": "http://localhost/abcde"
+      "pathname": "abcd1"
     },
     {
       "originalUrl": "https://www.facebook.com/home.php",
-      "shortenUrl": "http://localhost/ABCDE"
+      "pathname": "ABCD1"
     }
   ]
 }
