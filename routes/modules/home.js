@@ -14,7 +14,7 @@ router.get('/:pathname', async (req, res, next) => {
     if (url) {
       res.redirect(url.originalUrl)
     } else {
-      const err = new Error('Invalid URL')
+      const err = new Error('No original url')
       next(err)
     }
 
