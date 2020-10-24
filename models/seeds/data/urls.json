@@ -6,7 +6,15 @@
     },
     {
       "originalUrl": "https://www.facebook.com/home.php",
-      "pathname": "ABCD1"
+      "pathname": "abcd2"
+    },
+    {
+      "originalUrl": "https://developer.mozilla.org/en-US/",
+      "pathname": "abcd3"
+    },
+    {
+      "originalUrl": "https://www.youtube.com/",
+      "pathname": "abcd4"
     }
   ]
 }
